@@ -5,10 +5,17 @@ interface Input {
   type: string;
   placeholder?: string;
   id?: string;
+  value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<Input> = ({ placeholder, type, name, onChange }) => {
+const Input: React.FC<Input> = ({
+  placeholder,
+  type,
+  name,
+  onChange,
+  value,
+}) => {
   return (
     <input
       type={type}
@@ -16,6 +23,7 @@ const Input: React.FC<Input> = ({ placeholder, type, name, onChange }) => {
       name={name}
       onChange={onChange}
       className="input input-bordered input-sm w-full max-w-xs"
+      value={value}
     />
   );
 };
